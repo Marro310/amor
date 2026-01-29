@@ -1,0 +1,135 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+  background: #f6c1cc;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.page {
+  background: #fff;
+  width: 1100px;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0,0,0,.25);
+  margin: 40px auto 10px;
+}
+
+/* ===== GRID REVISTA ===== */
+.magazine {
+  display: grid;
+  grid-template-columns: 58% 42%;
+  grid-template-areas:
+    "title imgMain"
+    "text1 imgMain"
+    "text2 imgMain"
+    "imgSmall quote"
+    "text3 imgBottom";
+  gap: 28px;
+}
+
+/* ===== ÁREAS ===== */
+.title      { grid-area: title; }
+.text-1     { grid-area: text1; }
+.text-2     { grid-area: text2; }
+.text-3     { grid-area: text3; }
+
+.img-main   { grid-area: imgMain; }
+.img-small  { grid-area: imgSmall; }
+.img-bottom { grid-area: imgBottom; }
+
+.quote      { grid-area: quote; }
+
+/* ===== TEXTO ===== */
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.6rem;
+  line-height: 1;
+}
+
+.title span {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #111;
+}
+
+.text strong {
+  font-weight: 600;
+}
+
+/* ===== CITA ===== */
+.quote {
+  border: 2px solid #000;
+  padding: 22px;
+  font-style: italic;
+  font-size: .95rem;
+}
+
+/* ===== IMÁGENES ===== */
+.img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  aspect-ratio: 4 / 3;
+}
+
+.img-small {
+  height: 360px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .page {
+    width: 95%;
+  }
+
+  .magazine {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "imgMain"
+      "text1"
+      "text2"
+      "quote"
+      "imgSmall"
+      "text3"
+      "imgBottom";
+  }
+
+  .img-small {
+    height: 180px;
+  }
+}
+
+/* ============================= */
+/* RESULTADO SAN VALENTÍN */
+/* ============================= */
+
+.result {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  margin-top: 10px;
+}
+
+.result.show {
+  opacity: 1;
+}
+
+/* Corazón centrado */
+.heart {
+  font-size: 1.8rem;
+  margin-top: 6px;
+}

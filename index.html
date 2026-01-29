@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¿Quién eres tú para mí?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="revista.css">
+
+  <style>
+    .hidden { display: none !important; }
+
+    .next-container {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+    }
+
+    .next-btn {
+      padding: 16px 48px;
+      border-radius: 40px;
+      border: none;
+      background: #ff4d6d;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    /* ===== SAN VALENTÍN ===== */
+    .valentin {
+      position: fixed;
+      inset: 0;
+      background: url("fondo.jpg") center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .valentin-card {
+      background: white;
+      padding: 12px 12px 14px;
+      border-radius: 26px;
+      box-shadow: 0 25px 50px rgba(0,0,0,.25);
+      text-align: center;
+
+      width: 360px;
+      max-width: 90%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+    .valentin img {
+      width: 100%;
+      max-height: 380px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 18px;
+      margin-bottom: 6px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 22px;
+      margin: 6px 0 2px;
+    }
+
+    .buttons.hidden-buttons {
+      display: none; /* 🔥 ahora sí */
+    }
+
+
+    .buttons button {
+      border: none;
+      padding: 14px 44px;
+      font-size: 1.1rem;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: transform .3s ease, opacity .3s ease;
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: #fff;
+    }
+
+    #no {
+      background: #eee;
+      color: #ff4d6d;
+    }
+
+    .result {
+      margin-top: 4px;
+      font-size: 1.15rem;
+      color: #ff4d6d;
+      text-align: center;
+
+      display: none;
+    }
+
+    .result.show {
+      display: block;
+    }
+
+    .heart {
+      font-size: 1.5rem;
+      margin-top: 4px;
+    }
+
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= PRIMERA PÁGINA ================= -->
+<main class="page" id="page">
+
+  <section class="magazine">
+
+    <h1 class="title">
+      ¿Quién <span>eres tú</span><br>Para mí?
+    </h1>
+
+    <p class="text text-1">
+      <strong>Pienso en ti, no solo pienso en la persona que amo, sino en todo lo que representas en mi vida.</strong>
+      Eres mi lugar seguro, mi mejor amiga y la persona con la que quiero compartir cada risa,
+      cada logro y también cada dificultad.
+      Contigo aprendí que el amor no solo se siente, se construye todos los días,
+      y tú lo haces fácil simplemente siendo quien eres.
+    </p>
+
+    <p class="text text-2">
+      <strong>Para mí, eres inspiración, motivación y ternura.</strong>
+      Eres quien me impulsa a crecer, quien me acompaña incluso en silencio
+      y quien hace que mi mundo sea un lugar más bonito solo con estar en él.
+    </p>
+
+    <img src="img-main_negro.png" class="img img-main">
+    <img src="img-small_negro.png" class="img img-small">
+    <img src="img-bottom_negro.png" class="img img-bottom">
+
+    <div class="text text-3">
+      <p><strong>
+        ¿Y egoístamente, también deseo poder pasar muchísimos más San Valentines a tu lado.
+        No pido toda la vida, solo pido algo sencillo… 60 San Valentines más contigo.
+      </strong></p>
+
+      <p>
+        60 oportunidades para tomarte de la mano, reírnos de lo mismo de siempre,
+        abrazarnos sin razón y seguir eligiéndonos incluso en los días difíciles.
+      </p>
+
+      <p>
+        Dicen en psicología que el amor verdadero no es solo emoción, sino decisión.
+        Que amar es sentirse seguro, ser uno mismo sin miedo y encontrar calma en la
+        presencia del otro. Y contigo entendí eso sin que nadie me lo explicara.
+      </p>
+
+      <p>
+        Porque contigo me siento en casa.
+        Porque contigo no tengo que fingir, ni correr, ni esconderme.
+        Solo estar.
+      </p>
+
+      <p>
+        Si la felicidad se mide en momentos, yo solo quiero que los míos sigan teniendo tu nombre.
+        Y si la vida me da a elegir, te elijo a ti… hoy, mañana y en cada uno de esos
+        San Valentines que nos quedan por vivir.
+      </p>
+    </div>
+
+    <blockquote class="quote">
+      <p><strong>Para mí, tú eres todo.</strong></p>
+      <p>
+        Eres mi hogar, mi vida y la razón por la que me despierto cada día con ganas de seguir creciendo.
+        Porque cuando pienso en el futuro, siempre te imagino ahí, a mi lado.
+        Quiero una vida contigo donde no tengamos que preocuparnos de nada más
+        que de cuidarnos, apoyarnos y elegirnos todos los días.
+      </p>
+      <p>
+        Contigo aprendí que el amor no es perfecto, pero sí real.
+        Que se construye con risas, con paciencia, con abrazos en silencio
+        y con la tranquilidad de saber que no estoy solo.
+        Eres mi paz, mi motivación y mi lugar seguro.
+      </p>
+    </blockquote>
+
+  </section>
+
+  <div class="next-container">
+    <button class="next-btn" id="nextBtn">Next →</button>
+  </div>
+
+</main>
+
+<!-- ================= SAN VALENTÍN ================= -->
+<section class="valentin hidden" id="valentin">
+  <div class="valentin-card">
+
+    <img src="valentin.jpg" alt="¿Quieres ser mi San Valentín?">
+
+    <div class="buttons" id="buttons">
+      <button id="yes">Sí</button>
+      <button id="no">No</button>
+    </div>
+
+    <div class="result" id="result">
+      Exactamente la respuesta que esperaba
+      <div class="heart">❤️</div>
+  </div>
+
+
+  </div>
+</section>
+
+<script>
+  const nextBtn = document.getElementById("nextBtn");
+  const page = document.getElementById("page");
+  const valentin = document.getElementById("valentin");
+
+  const yesBtn = document.getElementById("yes");
+  const noBtn = document.getElementById("no");
+  const buttons = document.getElementById("buttons");
+  const result = document.getElementById("result");
+
+  let noClicks = 0;
+
+  nextBtn.onclick = () => {
+    page.remove();
+    document.body.classList.add("no-scroll");
+    valentin.classList.remove("hidden");
+  };
+
+  noBtn.onclick = () => {
+    noClicks++;
+    noBtn.style.transform = `scale(${1 - noClicks * 0.2})`;
+    yesBtn.style.transform = `scale(${1 + noClicks * 0.2})`;
+
+    if (noClicks >= 3) {
+      noBtn.style.opacity = "0";
+      setTimeout(() => {
+        noBtn.style.display = "none";
+        buttons.style.justifyContent = "center";
+      }, 300);
+    }
+  };
+
+  yesBtn.onclick = () => {
+  buttons.style.display = "none";
+  result.classList.add("show");
+};
+
+</script>
+
+</body>
+</html>
